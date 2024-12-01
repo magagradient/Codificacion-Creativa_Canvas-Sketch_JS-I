@@ -3,6 +3,7 @@ const random = require('canvas-sketch-util/random');
 const math = require('canvas-sketch-util/math');
 const Tweakpane = require('tweakpane');
 
+
 const settings = {
 	dimensions: [ 1080, 1080 ],
 	animate: true
@@ -20,9 +21,10 @@ const params = {
 	lineCap: 'butt',
 };
 
+
 const sketch = () => {
 	return ({ context, width, height, frame }) => {
-		context.fillStyle = 'white';
+		context.fillStyle = '#606c38';
 		context.fillRect(0, 0, width, height);
 
 		const cols = params.cols;
@@ -93,7 +95,12 @@ const createPane = () => {
 	folder.addInput(params, 'amp', { min: 0, max: 1 });
 	folder.addInput(params, 'animate');
 	folder.addInput(params, 'frame', { min: 0, max: 999 });
+
+	
+	
 };
+
+
 
 createPane();
 canvasSketch(sketch, settings);
